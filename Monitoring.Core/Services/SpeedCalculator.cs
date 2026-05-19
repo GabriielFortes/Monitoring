@@ -9,7 +9,7 @@ namespace Monitoring.Core.Services
     
     public class SpeedCalculator
     {
-        public double Calculate (Position oldPos, Position newPos)
+        public double Calculate (PositionSample oldPos, PositionSample newPos)
         {
             var deltaValue = newPos.Value - oldPos.Value;
             var deltaTime = (newPos.Timestamp - oldPos.Timestamp).TotalSeconds;

@@ -15,11 +15,11 @@ public class Worker : BackgroundService
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        while (!stoppingToken.IsCancellationRequested)
+        while (!stoppingToken.IsCancellationRequested) 
         {
             try
             {
-                var response  = await _httpClient.GetAsync(
+                var response = await _httpClient.GetAsync(
                     "http://localhost:5058/positions",
                     stoppingToken
                 );

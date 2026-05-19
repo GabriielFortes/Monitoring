@@ -1,15 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
 namespace Monitoring.Core.Entities
 {
-    public class Vehicle
+    public class EventConfiguration
     {
-        public int Id { get; set; }
-        public int CompanyId { get; set; }
-        public string Name { get; set; } = null!;
+        public int Id { get; set;}
+        public int EventTypeId { get; set; }
+        public string ConfigurationJson { get; set; } = null!;
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public DateTime? DeletedAt { get; set; }

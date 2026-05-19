@@ -13,15 +13,26 @@ namespace Monitoring.Infrastructure.Configurations
     {
         public void Configure(EntityTypeBuilder<Vehicle> builder)
         {
+            builder.ToTable("Vehicles");
+
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Name)
                 .IsRequired()
                 .HasMaxLength(150);
-        
-            builder.HasOne<Device>()
+
+            builder.HasIndex(x => x.CompanyId);
+
+            builder.HasOne<Company>()
                 .WithMany()
-                .HasForeignKey(x => x.DeviceId);
+                .HasForeignKey(x => x.CompanyId);
+            
+            builder.HasIndex(x => new
+            {
+                x.Id,
+                x.CompanyId
+            }).IsUnique();
+
         }
     }
 }

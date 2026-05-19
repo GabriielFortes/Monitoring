@@ -1,23 +1,22 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
-using System.Numerics;
 using System.Threading.Tasks;
 
 namespace Monitoring.Core.Entities
 {
-    public class Position
+    public class Event
     {
         public int Id { get; set; }
-        public int VehicleId { get; set; }
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
-        public int Speed { get; set; }
-        public double Heading { get; set; } 
-        public DateTime Timestamp { get; set; }
+        public int TripId { get; set; }
+        public int EventTypeId { get; set; }
+        public int EventConfigurationId { get; set; }
+        public string Description { get; set; } = null!; 
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public DateTime? DeletedAt { get; set; }
         public bool IsDeleted { get; set; }
     }
+
 }

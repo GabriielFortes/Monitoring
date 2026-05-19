@@ -1,23 +1,20 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using System.Threading.Tasks;
 
 namespace Monitoring.Core.Entities
 {
-    public class Position
+    public class RoutePoints
     {
         public int Id { get; set; }
-        public int VehicleId { get; set; }
+        public int RouteId { get; set; }
+        public int Sequence { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
-        public int Speed { get; set; }
-        public double Heading { get; set; } 
-        public DateTime Timestamp { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
-        public DateTime? DeletedAt { get; set; }
+        public DateTime? DeleteddAt { get; set; }
         public bool IsDeleted { get; set; }
     }
 }

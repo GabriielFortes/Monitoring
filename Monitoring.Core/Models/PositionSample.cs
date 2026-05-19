@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Monitoring.Core.Models
 {
-    public class Position
+    public class PositionSample
     {
         public double Value { get; set; }
         public DateTime Timestamp { get; set; }
