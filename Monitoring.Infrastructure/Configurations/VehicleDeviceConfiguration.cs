@@ -4,13 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Monitoring.Core.Entities;
 
 namespace Monitoring.Infrastructure.Configurations
 {
-    public class VehicleDeviceConfiguration : IEntityTypeConfiguration<VehicleDevices>
+    public class VehicleDeviceConfiguration : IEntityTypeConfiguration<VehicleDevice>
     {
-        public void Configure(EntityTypeBuilder<VehicleDevices> builder)
+        public void Configure(EntityTypeBuilder<VehicleDevice> builder)
         {
             builder.ToTable("VehicleDevices");
 
@@ -32,7 +33,10 @@ namespace Monitoring.Infrastructure.Configurations
             {
                 x.VehicleId,
                 x.DeviceId
-            });
+            }).IsUnique();
+        
+            builder.Property(x => x.Antenna)
+                .IsRequired();
         }
     }
 }

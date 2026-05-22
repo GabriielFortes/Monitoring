@@ -17,7 +17,6 @@ namespace Monitoring.Infrastructure.Configurations
             builder.Property(x => x.Name)
                 .IsRequired();
             
-            
         }
     }
 }
