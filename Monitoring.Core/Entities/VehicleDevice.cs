@@ -10,7 +10,6 @@ namespace Monitoring.Core.Entities
         public int Id { get; set; }
         public int VehicleId { get; set; }
         public int DeviceId { get; set; }
-        public int Antenna { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public DateTime? DeletedAt { get; set; }

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Monitoring.Core.Entities;
 
 namespace Monitoring.Infrastructure.Configurations
@@ -35,8 +34,7 @@ namespace Monitoring.Infrastructure.Configurations
                 x.DeviceId
             }).IsUnique();
         
-            builder.Property(x => x.Antenna)
-                .IsRequired();
+
         }
     }
 }

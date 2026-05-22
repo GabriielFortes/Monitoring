@@ -4,12 +4,10 @@ using Monitoring.Core.Entities;
 
 namespace Monitoring.Infrastructure.Configurations
 {
-    public class EventRuleConfiguration
-        : IEntityTypeConfiguration<EventRuleConfiguration>
+    public class EventRuleConfiguration : IEntityTypeConfiguration<Monitoring.Core.Entities.EventRuleConfiguration>
     {
 
-        public void Configure(
-            EntityTypeBuilder<EventRuleConfiguration> builder)
+        public void Configure(EntityTypeBuilder<Monitoring.Core.Entities.EventRuleConfiguration> builder)
         {
             builder.ToTable("EventConfigurations");
 

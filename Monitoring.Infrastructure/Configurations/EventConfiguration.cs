@@ -33,16 +33,16 @@ namespace Monitoring.Infrastructure.Configurations
             builder.HasIndex(x => new
             {
                 x.TripId,
-                x.EventConfigurationId
+                x.EventRuleConfigurationId
             });
 
             builder.HasOne<Trip>()
                 .WithMany()
                 .HasForeignKey(x => x.TripId);
             
-            builder.HasOne<Trip>()
+            builder.HasOne<EventRuleConfiguration>()
                 .WithMany()
-                .HasForeignKey(x => x.TripId);    
+                .HasForeignKey(x => x.EventRuleConfigurationId);    
         }
     }
 }
