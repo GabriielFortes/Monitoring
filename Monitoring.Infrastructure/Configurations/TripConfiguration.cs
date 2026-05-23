@@ -33,18 +33,7 @@ namespace Monitoring.Infrastructure.Configurations
             builder.HasOne<Route>()
                 .WithMany()
                 .HasForeignKey(x => x.RouteId);
-            
-            builder.HasIndex(x => new
-            {
-                x.Id,
-                x.VehicleId
-            }).IsUnique();
 
-            builder.HasIndex(x => new
-            {
-                x.Id,
-                x.MonitoringProfileId
-            }).IsUnique();
         }
     }
 }

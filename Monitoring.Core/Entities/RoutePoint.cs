@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Monitoring.Core.Entities
 {
-    public class RoutePoints
+    public class RoutePoint
     {
         public int Id { get; set; }
         public int RouteId { get; set; }

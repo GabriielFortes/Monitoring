@@ -10,8 +10,7 @@ namespace Monitoring.Core.Entities
     {
         public int Id { get; set; }
         public int TripId { get; set; }
-        public int EventTypeId { get; set; }
-        public int EventConfigurationId { get; set; }
+        public int EventRuleConfigurationId { get; set; }
         public string Description { get; set; } = null!; 
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }

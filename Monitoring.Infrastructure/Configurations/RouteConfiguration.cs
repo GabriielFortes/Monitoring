@@ -6,17 +6,21 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Monitoring.Core.Entities;
 
+
 namespace Monitoring.Infrastructure.Configurations
 {
-    public class CompanyConfiguration : IEntityTypeConfiguration<Company>
+    public class RouteConfiguration : IEntityTypeConfiguration<Route>
     {
-        public void Configure(EntityTypeBuilder<Company> builder)
+        public void Configure(EntityTypeBuilder<Route> builder)
         {
+            builder.ToTable("Routes");
+            
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Name)
-                .IsRequired();
-            
+                .IsRequired()
+                .HasMaxLength(150);
+
         }
     }
 }

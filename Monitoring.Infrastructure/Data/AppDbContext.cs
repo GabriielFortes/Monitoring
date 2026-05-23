@@ -15,10 +15,18 @@ namespace Monitoring.Infrastructure.Data
         {
         }
 
-        public DbSet<Vehicle> Vehicles => Set<Vehicle>();
         public DbSet<Device> Devices => Set<Device>();
-        public DbSet<Position> Positions => Set<Position>();
-
+        public DbSet<Event> Events => Set<Event>();
+        public DbSet<EventRuleConfiguration> EventRuleConfigurations => Set<EventRuleConfiguration>();
+        public DbSet<EventType> EventTypes => Set<EventType>();
+        public DbSet<MonitoringProfile> MonitoringProfiles => Set<MonitoringProfile>();
+        public DbSet<Position> Positions => Set<Position>();    
+        public DbSet<Route> Routes => Set<Route>();
+        public DbSet<RoutePoint> RoutePoints => Set<RoutePoint>();
+        public DbSet<Trip> Trips => Set<Trip>();
+        public DbSet<Vehicle> Vehicles => Set<Vehicle>();
+        public DbSet<VehicleDevice> VehicleDevices => Set<VehicleDevice>();
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
           
