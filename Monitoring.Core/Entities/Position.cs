@@ -8,16 +8,13 @@ namespace Monitoring.Core.Entities
 {
     public class Position
     {
-        public int Id { get; set; }
-        public int VehicleId { get; set; }
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
+        public long Id { get; set; }
+        public int VehicleDeviceId { get; set; }
+        public decimal Latitude { get; set; }
+        public decimal Longitude { get; set; }
         public int Speed { get; set; }
         public double Heading { get; set; } 
         public DateTime Timestamp { get; set; }
         public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
-        public DateTime? DeletedAt { get; set; }
-        public bool IsDeleted { get; set; }
     }
 }

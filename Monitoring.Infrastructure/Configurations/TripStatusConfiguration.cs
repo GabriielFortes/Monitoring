@@ -6,18 +6,21 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Monitoring.Core.Entities;
 
+
 namespace Monitoring.Infrastructure.Configurations
 {
-    public class DeviceConfiguration : IEntityTypeConfiguration<Device>
+    public class TripStatusConfiguration : IEntityTypeConfiguration<TripStatus>
     {
-        public void Configure(EntityTypeBuilder<Device> builder)
+        public void Configure(EntityTypeBuilder<TripStatus> builder)
         {
+            builder.ToTable("TripStatus");
+
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Name)
                 .IsRequired()
-                .HasMaxLength(150);
-        
+                .HasMaxLength(100);
+
             builder.Property(x => x.CreatedAt)
                 .IsRequired();
 
@@ -26,6 +29,7 @@ namespace Monitoring.Infrastructure.Configurations
 
             builder.Property(x => x.IsDeleted)
                 .IsRequired();
+
         }
     }
 }

@@ -21,6 +21,15 @@ namespace Monitoring.Infrastructure.Configurations
                 .IsRequired()
                 .HasMaxLength(150);
 
+            builder.Property(x => x.CreatedAt)
+                .IsRequired();
+
+            builder.Property(x => x.UpdatedAt)
+                .IsRequired();
+
+            builder.Property(x => x.IsDeleted)
+                .IsRequired();
+
             builder.HasIndex(x => x.CompanyId);
 
             builder.HasOne<Company>()
