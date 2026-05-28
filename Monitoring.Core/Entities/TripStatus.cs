@@ -5,19 +5,13 @@ using System.Threading.Tasks;
 
 namespace Monitoring.Core.Entities
 {
-    public class Trip
+    public class TripStatus
     {
         public int Id { get; set; }
-        public int VehicleId { get; set; }
-        public int MonitoringProfileId { get; set; }
-        public int RouteId { get; set; }
-        public int TripStatusId { get; set; }
-        public DateTime? StartedAt { get; set; }
-        public DateTime? EndedAt { get; set; }
+        public string Name { get; set; } = null!;
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public DateTime? DeletedAt { get; set; }
         public bool IsDeleted { get; set; }
-    
     }
 }

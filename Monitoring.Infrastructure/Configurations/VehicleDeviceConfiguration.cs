@@ -16,9 +16,27 @@ namespace Monitoring.Infrastructure.Configurations
 
             builder.HasKey(x => x.Id);
 
+            builder.Property(x => x.CreatedAt)
+                .IsRequired();
+
+            builder.Property(x => x.UpdatedAt)
+                .IsRequired();
+
+            builder.Property(x => x.IsDeleted)
+                .IsRequired();
+
             builder.HasIndex(x => x.VehicleId);
 
             builder.HasIndex(x => x.DeviceId);
+
+            builder.HasIndex(x => x.AntennaIdentifier)
+                .IsUnique();
+
+            builder.HasIndex(x => new
+            {
+                x.VehicleId,
+                x.DeviceId
+            }).IsUnique();
 
             builder.HasOne<Device>()
                 .WithMany()
@@ -27,13 +45,6 @@ namespace Monitoring.Infrastructure.Configurations
             builder.HasOne<Vehicle>()
                 .WithMany()
                 .HasForeignKey(x => x.VehicleId);
-
-            builder.HasIndex(x => new
-            {
-                x.VehicleId,
-                x.DeviceId
-            }).IsUnique();
-        
 
         }
     }

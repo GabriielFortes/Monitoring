@@ -16,11 +16,26 @@ namespace Monitoring.Infrastructure.Configurations
             
             builder.HasKey(x => x.Id);
 
+            builder.Property(x => x.CreatedAt)
+                .IsRequired();
+
+            builder.Property(x => x.UpdatedAt)
+                .IsRequired();
+
+            builder.Property(x => x.IsDeleted)
+                .IsRequired();
+
             builder.HasIndex(x => x.VehicleId);
 
             builder.HasIndex(x => x.MonitoringProfileId);
 
             builder.HasIndex(x => x.RouteId);
+
+            builder.HasIndex(x => x.TripStatusId);
+
+            builder.HasOne<TripStatus>()
+                .WithMany()
+                .HasForeignKey(x => x.TripStatusId);
 
             builder.HasOne<Vehicle>()
                 .WithMany()

@@ -15,8 +15,17 @@ namespace Monitoring.Infrastructure.Configurations
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Name)
+                .IsRequired()
+                .HasMaxLength(150);
+                
+            builder.Property(x => x.CreatedAt)
                 .IsRequired();
-            
+
+            builder.Property(x => x.UpdatedAt)
+                .IsRequired();
+
+            builder.Property(x => x.IsDeleted)
+                .IsRequired();
         }
     }
 }

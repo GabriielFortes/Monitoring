@@ -4,14 +4,23 @@ using Monitoring.Core.Entities;
 
 namespace Monitoring.Infrastructure.Configurations
 {
-    public class EventRuleConfiguration : IEntityTypeConfiguration<Monitoring.Core.Entities.EventRuleConfiguration>
+    public class EventRuleConfigurationMap : IEntityTypeConfiguration<EventRuleConfiguration>
     {
 
-        public void Configure(EntityTypeBuilder<Monitoring.Core.Entities.EventRuleConfiguration> builder)
+        public void Configure(EntityTypeBuilder<EventRuleConfiguration> builder)
         {
-            builder.ToTable("EventConfigurations");
+            builder.ToTable("EventRuleConfigurations");
 
             builder.HasKey(x => x.Id);
+            
+            builder.Property(x => x.CreatedAt)
+                .IsRequired();
+
+            builder.Property(x => x.UpdatedAt)
+                .IsRequired();
+
+            builder.Property(x => x.IsDeleted)
+                .IsRequired();
 
             builder.HasIndex(x => x.EventTypeId);
 
@@ -30,6 +39,7 @@ namespace Monitoring.Infrastructure.Configurations
             builder.HasOne<EventType>()
                 .WithMany()
                 .HasForeignKey(x => x.EventTypeId);
+
         }
     }
 }

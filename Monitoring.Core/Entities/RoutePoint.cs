@@ -13,8 +13,6 @@ namespace Monitoring.Core.Entities
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
-        public DateTime? DeleteddAt { get; set; }
-        public bool IsDeleted { get; set; }
+
     }
 }
